@@ -1,0 +1,27 @@
+From 85c3de30a4d56a9c398cfbb2aa903b7e359ca4a5 Mon Sep 17 00:00:00 2001
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Tue, 26 Mar 2024 07:28:12 +0200
+Subject: [PATCH] HACK: drm/msm/disp: dpu: Increase the max width
+
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c
+index 1955848b1b78..e11c699bba6a 100644
+--- a/drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c
++++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c
+@@ -1152,8 +1152,7 @@ static int dpu_kms_hw_init(struct msm_kms *kms)
+ 	 * max crtc width is equal to the max mixer width * 2 and max height is
+ 	 * is 4K
+ 	 */
+-	dev->mode_config.max_width =
+-			dpu_kms->catalog->caps->max_mixer_width * 2;
++	dev->mode_config.max_width = 16384;
+ 	dev->mode_config.max_height = 4096;
+ 
+ 	dev->max_vblank_count = 0xffffffff;
+-- 
+2.34.1
+
