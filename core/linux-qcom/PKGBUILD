@@ -7,14 +7,14 @@ pkgbase=linux-qcom
 _srcname=linux
 _kernelname=${pkgbase#linux}
 _desc="Qualcomm Platforms Linux"
-pkgver=6.10_rc2
+pkgver=6.10_rc3
 pkgrel=1
 arch=('aarch64')
 url="http://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-tools' 'vboot-utils' 'dtc')
 options=('!strip')
-source=("git+https://github.com/jhovold/linux.git#branch=wip/sc8280xp-6.10-rc2"
+source=("git+https://github.com/jhovold/linux.git#branch=wip/sc8280xp-6.10-rc3"
         'config_fragment'
 	'0001-HACK-drm-msm-disp-dpu-Increase-the-max-width.patch'
         'linux.preset')
